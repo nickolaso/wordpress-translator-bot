@@ -4,7 +4,10 @@
 
 ### Requirements
 ```
-pip install polib requests dotenv colorama tqdm
+pip install polib python-dotenv colorama tqdm requests
+pip install googletrans==4.0.0rc1 deep-translator
+# Optional (for nice picker):
+pip install InquirerPy
 ```
 
 ### Environment
