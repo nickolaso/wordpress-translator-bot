@@ -10,8 +10,7 @@ Uses Google Translate, MyMemory, and Libretranslate with multiple retries.
 
 ### Requirements
 ```
-pip install polib python-dotenv colorama tqdm requests
-pip install googletrans==4.0.0rc1 deep-translator
+pip install polib tqdm python-dotenv colorama requests InquirerPy googletrans==4.0.0-rc1 deep-translator
 # Optional (for nice picker):
 pip install InquirerPy
 ```
