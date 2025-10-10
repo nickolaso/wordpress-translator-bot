@@ -1,5 +1,11 @@
 # Wordpress Translator Bot #
 
+Translates your wordpress plugin or theme in multiple languages using python.
+
+## Features
+
+Uses Google Translate, MyMemory, and Libretranslate with multiple retries. 
+
 ## Setup
 
 ### Requirements
