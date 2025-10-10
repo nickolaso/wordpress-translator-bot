@@ -398,6 +398,11 @@ def generate_translations(selected_langs, provider_chain, max_retries=3, zip_out
         print(Fore.MAGENTA + f"\n{ICONS['globe']} {lang_name} ({lang_code}) → locale {locale}\n")
         po = polib.POFile()
         po.metadata = pot.metadata.copy()
+
+        # Add language code to headers
+        po.metadata["Language"] = locale.replace("-", "_")
+        po.metadata.setdefault("Language-Team", f"{lang_name} <LL@li.org>")
+        po.metadata.setdefault("X-Generator", "wordpress-translator-bot")
         provider_hits = {"google": 0, "mymemory": 0, "libre": 0, "mirror": 0, "skip": 0}
 
         with tqdm(total=total_entries, desc=f"{lang_name[:16]}", ncols=90, colour="green", leave=True) as bar:

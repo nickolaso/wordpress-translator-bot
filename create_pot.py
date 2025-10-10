@@ -47,6 +47,7 @@ def err(msg):   print(f"{Fore.RED}{emoji('❌','[X]')}{Style.RESET_ALL} {msg}")
 # 🔍 Plugin Header
 # ================================================================
 PLUGIN_HEADER_RE = re.compile(r'^[\s*/#@-]*Plugin\s+Name\s*:\s*(?P<name>.+?)\s*$', re.I | re.M)
+plugin_main_file = None
 
 def find_plugin_name(base_dir):
     for root, _, files in os.walk(base_dir):
@@ -56,6 +57,7 @@ def find_plugin_name(base_dir):
                     with open(os.path.join(root, f), "r", encoding="utf-8", errors="ignore") as fh:
                         text = fh.read(20000)
                         m = PLUGIN_HEADER_RE.search(text)
+                        plugin_main_file = f.lower()
                         if m:
                             return m.group("name").strip()
                 except Exception:
@@ -177,10 +179,13 @@ def generate_pot():
         "Project-Id-Version": plugin_name,
         "Report-Msgid-Bugs-To": plugin_name,
         "POT-Creation-Date": time.strftime("%Y-%m-%d %H:%M%z"),
+        "PO-Revision-Date": time.strftime("%Y-%m-%d %H:%M%z"),
+        "Last-Translator": "",
+        "Language-Team": "",
         "MIME-Version": "1.0",
         "Content-Type": "text/plain; charset=UTF-8",
         "Content-Transfer-Encoding": "8bit",
-        "Plural-Forms": "nplurals=2; plural=(n != 1);"
+        "Plural-Forms": "nplurals=2; plural=(n != 1);",
     }
 
     for (ctx, msgid, plural), occs in sorted(entries.items(), key=lambda x: x[0][1].lower()):
@@ -193,7 +198,8 @@ def generate_pot():
             entry.msgid_plural = plural
         if ctx:
             entry.msgctxt = ctx
-        pot.append(entry)
+        if entry.msgctxt != "":
+            pot.append(entry)
 
     pot.save(OUTPUT_FILE)
     ok(f"POT file generated → {OUTPUT_FILE}")
