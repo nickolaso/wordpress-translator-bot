@@ -14,11 +14,10 @@ pip install polib tqdm python-dotenv colorama requests InquirerPy googletrans==4
 # Optional (for nice picker):
 pip install InquirerPy
 ```
-
+--------------------------------------
 ### Environment
 
 ``` .env ``` file
-
 ```
 # Folder being searched for WordPress translations strings
 SEARCH_DIR= 
@@ -38,7 +37,7 @@ OUTPUT_FILE=your-pot-file.pot
 ```
 POT_FILE=./your-pot-file.pot # absolute or relative path
 ```
-
+--------------------------------------
 ### How to run
 #### Create a .pot file
 ```
@@ -48,7 +47,6 @@ python create_pot.py
 ```
 python create_translations.py
 ```
-
 ### Arguments
 
 - add --zip to archive the files at the end
@@ -67,7 +65,7 @@ python translate_bot.py --zip
 ```
 python translate_bot.py --max-retries 4 --providers google,mymemory,libre
 ```
-
+--------------------------------------
 ### Languages & Data
 - Add or remove what you need
 
@@ -98,7 +96,7 @@ languages.json
 ]
 
 ```
-
+--------------------------------------
 ```
 locale.json
 ```
@@ -143,7 +141,7 @@ locale.json
   "vi": "vi_VN"
 }
 ```
-
+--------------------------------------
 ### Language Menu
 
 ```
@@ -168,7 +166,7 @@ locale.json
   ○ Thai (th)
   ○ Turkish (tr)
 ```
-
+--------------------------------------
 ### Output example
 ```
 🚀 Starting translations for 17 languages...
