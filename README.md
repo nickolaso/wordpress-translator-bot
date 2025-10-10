@@ -137,8 +137,33 @@ locale.json
   "ms": "ms_MY",
   "vi": "vi_VN"
 }
+```
+
+### Language Menu
 
 ```
+? Select languages (Space to toggle, Enter to confirm): Tip: choose “✅ All languages” to select everything
+❯ ○ ✅ All languages
+  ○ Arabic (ar)
+  ○ Chinese (Simplified) (zh-cn)
+  ○ French (fr)
+  ○ German (de)
+  ○ Greek (el)
+  ○ Hebrew (he)
+  ○ Italian (it)
+  ○ Korean (ko)
+  ○ Nepali (ne)
+  ○ Persian (fa)
+  ○ Portuguese (pt)
+  ○ Portuguese (Brazil) (pt-br)
+  ○ Russian (ru)
+  ○ Spanish (es)
+  ○ Spanish (Mexico) (es-mx)
+  ○ Swedish (sv)
+  ○ Thai (th)
+  ○ Turkish (tr)
+```
+
 ### Output example
 ```
 🚀 Starting translations for 17 languages...
@@ -162,5 +187,4 @@ locale.json
 
 💾 Saved ./languages/test-plugin-fr_FR.po
 💾 Saved ./languages/test-plugin-fr_FR.mo
-
 ```
